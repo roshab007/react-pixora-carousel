@@ -6,15 +6,44 @@ PixoraCarousel is a highly customizable React carousel component that offers sea
 
 ### Web
 
-| Bottom Thumbnail Position                                                                       | Left Thumbnail Position                                                                                 |
-| ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| ![Web Demo](https://github.com/roshab007/react-pixora-carousel/blob/main/gifs/web-carousel.gif) | ![Mobile Demo](https://github.com/roshab007/react-pixora-carousel/blob/main/gifs/web-carousel-left.gif) |
+ <table>
+        <tr>
+            <th>Bottom Thumbnail Position</th>
+        </tr>
+        <tr>
+            <td>
+            <img src="https://raw.githubusercontent.com/roshab007/react-pixora-carousel/main/gifs/web-carousel.gif" alt="Web Bottom Thumbnail Position">
+            </td>
+        </tr>
+    </table>
+
+  <table>
+        <tr>
+            <th>Left Thumbnail Position</th>
+        </tr>
+        <tr>
+            <td>
+             <img src="https://raw.githubusercontent.com/roshab007/react-pixora-carousel/main/gifs/web-carousel-left.gif" alt="Web Left Thumbnail Position" >
+             </td>
+        </tr>
+    </table>
 
 ### Mobile
 
-| Bottom Thumbnail Position                                                                             | Left Thumbnail Position                                                                                 |
-| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| ![Mobile Demo](https://github.com/roshab007/react-pixora-carousel/blob/main/gifs/mobile-carousel.gif) | ![Web Demo](https://github.com/roshab007/react-pixora-carousel/blob/main/gifs/mobile-carousel-left.gif) |
+   <table>
+        <tr>
+            <th>Bottom Thumbnail Position</th>
+            <th>Left Thumbnail Position</th>
+        </tr>
+        <tr>
+            <td>
+            <img src="https://raw.githubusercontent.com/roshab007/react-pixora-carousel/main/gifs/mobile-carousel.gif" alt="Bottom Thumbnail Position">
+            </td>
+            <td>
+             <img src="https://raw.githubusercontent.com/roshab007/react-pixora-carousel/main/gifs/mobile-carousel-left.gif" alt="Left Thumbnail Position" >
+             </td>
+        </tr>
+    </table>
 
 ## Installation
 
@@ -83,69 +112,159 @@ For detailed information, check out the [Tailwind CSS documentation on using the
 
 ## Props
 
-| Prop                       | Type                                    | Default                                                                                                                                                   | Description                                                                     |
-| -------------------------- | --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| **images**                 | `{ src: string; alt?: string; }[]`      | **Required**                                                                                                                                              | Array of image objects.                                                         |
-| **loop**                   | `boolean`                               | `false`                                                                                                                                                   | Enables looping of carousel items.                                              |
-| **autoPlay**               | `boolean`                               | `false`                                                                                                                                                   | Enables or disables autoplay.                                                   |
-| **stopOnInteraction**      | `boolean`                               | `false`                                                                                                                                                   | Stops autoplay on user interaction.                                             |
-| **autoPlayDelay**          | `number`                                | `3000`                                                                                                                                                    | Time in milliseconds between slide transitions.                                 |
-| **thumbnailPosition**      | `ThumbnailPosition`                     | `"bottom"`                                                                                                                                                | Position of the thumbnails. Can be `"bottom"`, `"left"`, `"right"`, or `"top"`. |
-| **onSelectThumb**          | `(image: Image, index: number) => void` | `undefined`                                                                                                                                               | Callback function when a thumbnail is selected.                                 |
-| **containerClassName**     | `string`                                | `undefined`                                                                                                                                               | Custom class for the main container.                                            |
-| **containerStyle**         | `object`                                | `{ maxWidth: 'min(800px, 100vw)', maxHeight: 'min(750px, 100svh, 100vh)', padding: '16px', display: 'flex', gap: '16px', width: '100%', height: '100%' }` | Inline styles for the main container.                                           |
-| **hideThumbnails**         | `boolean`                               | `false`                                                                                                                                                   | Hides the thumbnails in the carousel.                                           |
-| **hideThumbnailsOnMobile** | `boolean`                               | `false`                                                                                                                                                   | Hides the thumbnails on mobile devices.                                         |
+| Prop                       | Type       | Default                   | Description                                                                                                                                            |
+| -------------------------- | ---------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **images**                 | `Image[]`  | **Required**              | Array of image objects, where each object contains a src (required) and an optional alt text. Example: { src: "image-url", alt: "image description" }. |
+| **loop**                   | `boolean`  | `false`                   | Enables looping of carousel items.                                                                                                                     |
+| **autoPlay**               | `boolean`  | `false`                   | Enables or disables autoplay.                                                                                                                          |
+| **stopOnInteraction**      | `boolean`  | `false`                   | Stops autoplay on user interaction.                                                                                                                    |
+| **autoPlayDelay**          | `number`   | `3000`                    | Time in milliseconds between slide transitions.                                                                                                        |
+| **thumbnailPosition**      | `string`   | `"bottom"`                | Position of the thumbnails. Can be `"bottom"`, `"left"`, `"right"`, or `"top"`.                                                                        |
+| **onSelectThumb**          | `function` | `undefined`               | Callback function when a thumbnail is selected, receiving the image: { src: string, alt:string } and index: number as arguments.                       |
+| **containerClassName**     | `string`   | [`container`](#container) | Custom class for the main container.                                                                                                                   |
+| **containerStyle**         | `object`   | `undefined`               | Inline styles for the main container.                                                                                                                  |
+| **hideThumbnails**         | `boolean`  | `false`                   | Hides the thumbnails in the carousel.                                                                                                                  |
+| **hideThumbnailsOnMobile** | `boolean`  | `false`                   | Hides the thumbnails on mobile devices.                                                                                                                |
 
 ## Carousel Props
 
-| Prop                           | Type     | Default                                                                                                                                                               | Description                                     |
-| ------------------------------ | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
-| **carouselContainerClassName** | `string` | `undefined`                                                                                                                                                           | Custom class for the inner carousel container.  |
-| **carouselContainerStyle**     | `object` | `{ overflow: 'hidden', display: 'flex', width: '100%', height: '100%' }`                                                                                              | Inline styles for the inner carousel container. |
-| **carouselSlideClassName**     | `string` | `undefined`                                                                                                                                                           | Custom class for individual carousel slides.    |
-| **carouselSlideStyle**         | `object` | `{ flex: '0 0 100%', minWidth: '0', marginRight: '8px', position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '8px' }` | Inline styles for individual carousel slides.   |
-| **carouselImageClassName**     | `string` | `undefined`                                                                                                                                                           | Custom class for carousel images.               |
-| **carouselImageStyle**         | `object` | `{ height: '100%', width: '100%', objectFit: 'cover', borderRadius: '8px' }`                                                                                          | Inline styles for carousel images.              |
+| Prop                           | Type     | Default                           | Description                                   |
+| ------------------------------ | -------- | --------------------------------- | --------------------------------------------- |
+| **carouselContainerClassName** | `string` | [`carousel-container`](#carousel) | Custom class for the carousel container.      |
+| **carouselContainerStyle**     | `object` | `undefined`                       | Inline styles for the carousel container.     |
+| **carouselSlideClassName**     | `string` | [`carousel-slide`](#carousel)     | Custom class for individual carousel slides.  |
+| **carouselSlideStyle**         | `object` | `undefined`                       | Inline styles for individual carousel slides. |
+| **carouselImageClassName**     | `string` | [`carousel-image`](#carousel)     | Custom class for carousel images.             |
+| **carouselImageStyle**         | `object` | `undefined`                       | Inline styles for carousel images.            |
 
 ## Thumbnail Props
 
-| Prop                                 | Type     | Default                                                                                                                                                  | Description                                               |
-| ------------------------------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
-| **thumbnailContainerClassName**      | `string` | `undefined`                                                                                                                                              | Custom class for the thumbnail container.                 |
-| **thumbnailContainerStyle**          | `object` | `{ display: 'flex', gap: '8px', justifyContent: 'start', maxHeight: '100%' }`                                                                            | Inline styles for the thumbnail container.                |
-| **thumbnailWrapperClassName**        | `string` | `undefined`                                                                                                                                              | Custom class for the thumbnail wrapper.                   |
-| **thumbnailWrapperStyle**            | `object` | `{ overflow: 'hidden', flexShrink: '0' }`                                                                                                                | Inline styles for the thumbnail wrapper.                  |
-| **thumbnailButtonClassName**         | `string` | `undefined`                                                                                                                                              | Custom class for the thumbnail button.                    |
-| **thumbnailButtonStyle**             | `object` | `{ cursor: 'pointer', opacity: '0.7', flexShrink: '0', width: '120px', height: '120px', borderRadius: '8px', position: 'relative', overflow: 'hidden' }` | Inline styles for the thumbnail button.                   |
-| **thumbnailButtonSelectedClassName** | `string` | `undefined`                                                                                                                                              | Custom class for the selected thumbnail button.           |
-| **thumbnailButtonSelectedStyle**     | `object` | `{ opacity: '1', border: '2px solid', borderColor: '#3b82f6', borderRadius: '8px' }`                                                                     | Inline styles for the selected selected thumbnail button. |
-| **thumbnailImageClassName**          | `string` | `undefined`                                                                                                                                              | Custom class for the thumbnail image.                     |
-| **thumbnailImageStyle**              | `object` | `{ height: '100%', width: '100%', objectFit: 'cover', borderRadius: '8px' }`                                                                             | Inline styles for the thumbnail image.                    |
+| Prop                                 | Type     | Default                                   | Description                                               |
+| ------------------------------------ | -------- | ----------------------------------------- | --------------------------------------------------------- |
+| **thumbnailWrapperClassName**        | `string` | [`thumbnail-wrapper`](#thumbnail)         | Custom class for the thumbnail wrapper.                   |
+| **thumbnailWrapperStyle**            | `object` | `undefined`                               | Inline styles for the thumbnail wrapper.                  |
+| **thumbnailContainerClassName**      | `string` | [`thumbnail-container`](#thumbnail)       | Custom class for the thumbnail container.                 |
+| **thumbnailContainerStyle**          | `object` | `undefined`                               | Inline styles for the thumbnail container.                |
+| **thumbnailButtonClassName**         | `string` | [`thumbnail-button`](#thumbnail)          | Custom class for the thumbnail button.                    |
+| **thumbnailButtonStyle**             | `object` | `undefined`                               | Inline styles for the thumbnail button.                   |
+| **thumbnailButtonSelectedClassName** | `string` | [`thumbnail-button.selected`](#thumbnail) | Custom class for the selected thumbnail button.           |
+| **thumbnailButtonSelectedStyle**     | `object` | `undefined`                               | Inline styles for the selected selected thumbnail button. |
+| **thumbnailImageClassName**          | `string` | [`thumbnail-image`](#thumbnail)           | Custom class for the thumbnail image.                     |
+| **thumbnailImageStyle**              | `object` | `undefined`                               | Inline styles for the thumbnail image.                    |
 
-### Responsive Styling for Thumbnail Button
+## Default Styles
 
-PixoraCarousel uses **media queries** to automatically adjust the size of the thumbnail button on different screen sizes for a responsive experience.
+PixoraCarousel provides default styles for various elements to ensure a seamless experience. You can override these styles using the provided props.
+
+### Container
 
 ```css
-/* Adjust thumbnail button size for tablet screens (max-width: 768px) */
+container {
+  max-width: min(800px, 100vw);
+  max-height: min(750px, 100svh, 100vh);
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+}
+```
+
+### Carousel
+
+```css
+carousel-container {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+carousel-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  margin-right: 8px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+carousel-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+```
+
+### Thumbnail
+
+```css
+thumbnail-wrapper {
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Hide thumbnails on mobile devices if hideThumbnailsOnMobile Prop is true */
+@media (max-width: 480px) {
+  thumbnail-wrapper.hidden {
+    display: none;
+  }
+}
+
+thumbnail-container {
+  display: flex;
+  gap: 8px;
+  justify-content: start;
+  max-height: 100%;
+}
+
+thumbnail-button {
+  cursor: pointer;
+  opacity: 0.7;
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Adjust thumbnail button size for tablet screens */
 @media (max-width: 768px) {
-  .thumbnail-button {
+  thumbnail-button {
     width: 90px;
     height: 90px;
   }
 }
 
-/* Adjust thumbnail button size for small mobile screens (max-width: 480px) */
+/* Adjust thumbnail button size for small mobile screens */
 @media (max-width: 480px) {
-  .thumbnail-button {
+  thumbnail-button {
     width: 70px;
     height: 70px;
   }
 }
-```
 
-These media queries are applied automatically for the **thumbnail button** within the **PixoraCarousel** component, ensuring it looks great on tablet and mobile devices.
+thumbnail-button:hover {
+  opacity: 1;
+}
+
+thumbnail-button.selected {
+  opacity: 1;
+  border: 2px solid;
+  border-color: #3b82f6;
+  border-radius: 8px;
+}
+
+thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+```
 
 ## License
 

@@ -70,7 +70,7 @@ const Thumbnails: React.FC<ThumbnailsProps> = ({
             {loadingStates[index] && <div className="thumbnail-skeleton" />}
             <img
               src={image.src}
-              alt={`Thumbnail ${index + 1}`}
+              alt={`Thumbnail ${image.alt}`}
               style={{
                 ...thumbnailImageStyle,
                 display: loadingStates[index] ? "none" : "block",
