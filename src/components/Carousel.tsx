@@ -17,11 +17,9 @@ const Carousel: React.FC<CarouselProps> = ({
   );
 
   const handleImageLoad = (index: number) => {
-    setLoadingStates((prev) => {
-      const newState = [...prev];
-      newState[index] = false;
-      return newState;
-    });
+    setLoadingStates((prev) =>
+      prev.map((state, i) => (i === index ? false : state))
+    );
   };
 
   return (
@@ -40,7 +38,7 @@ const Carousel: React.FC<CarouselProps> = ({
               {loadingStates[index] && <div className="carousel-skeleton" />}
               <img
                 src={image.src}
-                alt={image?.alt}
+                alt={image.alt || `Slide ${index + 1}`}
                 style={{
                   ...carouselImageStyle,
                   display: loadingStates[index] ? "none" : "block",

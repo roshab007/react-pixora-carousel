@@ -26,11 +26,9 @@ const Thumbnails: React.FC<ThumbnailsProps> = ({
   );
 
   const handleImageLoad = (index: number) => {
-    setLoadingStates((prev) => {
-      const newState = [...prev];
-      newState[index] = false;
-      return newState;
-    });
+    setLoadingStates((prev) =>
+      prev.map((state, i) => (i === index ? false : state))
+    );
   };
 
   return (
@@ -70,7 +68,7 @@ const Thumbnails: React.FC<ThumbnailsProps> = ({
             {loadingStates[index] && <div className="thumbnail-skeleton" />}
             <img
               src={image.src}
-              alt={`Thumbnail ${image.alt}`}
+              alt={image?.alt || `Thumbnail ${index + 1}`}
               style={{
                 ...thumbnailImageStyle,
                 display: loadingStates[index] ? "none" : "block",

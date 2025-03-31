@@ -87,30 +87,29 @@ const PixoraCarousel: React.FC<PixoraCarouselProps> = ({
         ...containerStyle,
       }}
     >
-      {!hideThumbnails &&
-        (thumbnailPosition === "left" || thumbnailPosition === "top") && (
-          <Thumbnails
-            images={images}
-            selectedIndex={selectedIndex}
-            onThumbClick={(image, index) => {
-              onThumbClick(index);
-              onSelectThumb?.(image, index);
-            }}
-            thumbnailContainerClassName={thumbnailContainerClassName}
-            thumbnailContainerStyle={thumbnailContainerStyle}
-            thumbnailWrapperClassName={thumbnailWrapperClassName}
-            thumbnailWrapperStyle={thumbnailWrapperStyle}
-            thumbnailButtonClassName={thumbnailButtonClassName}
-            thumbnailButtonSelectedClassName={thumbnailButtonSelectedClassName}
-            thumbnailButtonStyle={thumbnailButtonStyle}
-            thumbnailButtonSelectedStyle={thumbnailButtonSelectedStyle}
-            thumbnailImageClassName={thumbnailImageClassName}
-            thumbnailImageStyle={thumbnailImageStyle}
-            viewportRef={thumbViewportRef}
-            thumbnailPosition={thumbnailPosition}
-            hideThumbnailsOnMobile={hideThumbnailsOnMobile}
-          />
-        )}
+      {!hideThumbnails && ["left", "top"].includes(thumbnailPosition) && (
+        <Thumbnails
+          images={images}
+          selectedIndex={selectedIndex}
+          onThumbClick={(image, index) => {
+            onThumbClick(index);
+            onSelectThumb?.(image, index);
+          }}
+          thumbnailContainerClassName={thumbnailContainerClassName}
+          thumbnailContainerStyle={thumbnailContainerStyle}
+          thumbnailWrapperClassName={thumbnailWrapperClassName}
+          thumbnailWrapperStyle={thumbnailWrapperStyle}
+          thumbnailButtonClassName={thumbnailButtonClassName}
+          thumbnailButtonSelectedClassName={thumbnailButtonSelectedClassName}
+          thumbnailButtonStyle={thumbnailButtonStyle}
+          thumbnailButtonSelectedStyle={thumbnailButtonSelectedStyle}
+          thumbnailImageClassName={thumbnailImageClassName}
+          thumbnailImageStyle={thumbnailImageStyle}
+          viewportRef={thumbViewportRef}
+          thumbnailPosition={thumbnailPosition}
+          hideThumbnailsOnMobile={hideThumbnailsOnMobile}
+        />
+      )}
 
       <Carousel
         images={images}
@@ -123,30 +122,29 @@ const PixoraCarousel: React.FC<PixoraCarouselProps> = ({
         viewportRef={mainViewportRef}
       />
 
-      {!hideThumbnails &&
-        (thumbnailPosition === "right" || thumbnailPosition === "bottom") && (
-          <Thumbnails
-            images={images}
-            selectedIndex={selectedIndex}
-            onThumbClick={(image, index) => {
-              onThumbClick(index);
-              onSelectThumb?.(image, index);
-            }}
-            thumbnailContainerClassName={thumbnailContainerClassName}
-            thumbnailContainerStyle={thumbnailContainerStyle}
-            thumbnailWrapperClassName={thumbnailWrapperClassName}
-            thumbnailWrapperStyle={thumbnailWrapperStyle}
-            thumbnailButtonClassName={thumbnailButtonClassName}
-            thumbnailButtonSelectedClassName={thumbnailButtonSelectedClassName}
-            thumbnailButtonStyle={thumbnailButtonStyle}
-            thumbnailButtonSelectedStyle={thumbnailButtonSelectedStyle}
-            thumbnailImageClassName={thumbnailImageClassName}
-            thumbnailImageStyle={thumbnailImageStyle}
-            viewportRef={thumbViewportRef}
-            thumbnailPosition={thumbnailPosition}
-            hideThumbnailsOnMobile={hideThumbnailsOnMobile}
-          />
-        )}
+      {!hideThumbnails && ["right", "bottom"].includes(thumbnailPosition) && (
+        <Thumbnails
+          images={images}
+          selectedIndex={selectedIndex}
+          onThumbClick={(image, index) => {
+            onThumbClick(index);
+            onSelectThumb?.(image, index);
+          }}
+          thumbnailContainerClassName={thumbnailContainerClassName}
+          thumbnailContainerStyle={thumbnailContainerStyle}
+          thumbnailWrapperClassName={thumbnailWrapperClassName}
+          thumbnailWrapperStyle={thumbnailWrapperStyle}
+          thumbnailButtonClassName={thumbnailButtonClassName}
+          thumbnailButtonSelectedClassName={thumbnailButtonSelectedClassName}
+          thumbnailButtonStyle={thumbnailButtonStyle}
+          thumbnailButtonSelectedStyle={thumbnailButtonSelectedStyle}
+          thumbnailImageClassName={thumbnailImageClassName}
+          thumbnailImageStyle={thumbnailImageStyle}
+          viewportRef={thumbViewportRef}
+          thumbnailPosition={thumbnailPosition}
+          hideThumbnailsOnMobile={hideThumbnailsOnMobile}
+        />
+      )}
     </div>
   );
 };
