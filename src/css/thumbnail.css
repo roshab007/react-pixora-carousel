@@ -1,0 +1,59 @@
+.thumbnail-wrapper {
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .thumbnail-wrapper.hidden {
+    display: none;
+  }
+}
+
+.thumbnail-container {
+  display: flex;
+  gap: 8px;
+  justify-content: start;
+  max-height: 100%;
+}
+
+.thumbnail-button {
+  cursor: pointer;
+  opacity: 0.7;
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .thumbnail-button {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .thumbnail-button {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.thumbnail-button:hover {
+  opacity: 1;
+}
+
+.thumbnail-button.selected {
+  opacity: 1;
+  border: 2px solid;
+  border-color: #3b82f6;
+  border-radius: 8px;
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

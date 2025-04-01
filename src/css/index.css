@@ -1,0 +1,13 @@
+@import url("./carousel.css");
+@import url("./thumbnail.css");
+@import url("./skeleton.css");
+
+.container {
+  max-width: min(800px, 100vw);
+  max-height: min(750px, 100svh, 100vh);
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+}

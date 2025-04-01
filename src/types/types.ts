@@ -5,6 +5,22 @@ type Image = {
   alt?: string;
 };
 
+export type CarouselProps = {
+  images: Image[];
+  viewportRef: UseEmblaCarouselType[0];
+  carouselContainerClassName?: string;
+  carouselContainerStyle?: React.CSSProperties;
+} & Omit<CarouselSlideProps, "image" | "index">;
+
+export type CarouselSlideProps = {
+  carouselImageClassName?: string;
+  carouselImageStyle?: React.CSSProperties;
+  carouselSlideStyle?: React.CSSProperties;
+  carouselSlideClassName?: string;
+  image: Image;
+  index: number;
+};
+
 export type ThumbnailPosition = "bottom" | "left" | "right" | "top";
 
 export type ThumbnailsProps = {
@@ -12,29 +28,25 @@ export type ThumbnailsProps = {
   selectedIndex: number;
   onThumbClick: (image: Image, index: number) => void;
   viewportRef: UseEmblaCarouselType[0];
+  thumbnailPosition: ThumbnailPosition;
+  hideThumbnailsOnMobile?: boolean;
+  thumbnailWrapperClassName?: string;
+  thumbnailWrapperStyle?: React.CSSProperties;
   thumbnailContainerClassName?: string;
   thumbnailContainerStyle?: React.CSSProperties;
-  thumbnailPosition: ThumbnailPosition;
+} & Omit<ThumbnailItemProps, "isSelected" | "index" | "image" | "onClick">;
+
+export type ThumbnailItemProps = {
   thumbnailButtonStyle?: React.CSSProperties;
   thumbnailButtonSelectedStyle?: React.CSSProperties;
   thumbnailButtonClassName?: string;
   thumbnailButtonSelectedClassName?: string;
   thumbnailImageClassName?: string;
   thumbnailImageStyle?: React.CSSProperties;
-  thumbnailWrapperClassName?: string;
-  thumbnailWrapperStyle?: React.CSSProperties;
-  hideThumbnailsOnMobile?: boolean;
-};
-
-export type CarouselProps = {
-  images: Image[];
-  viewportRef: UseEmblaCarouselType[0];
-  carouselContainerClassName?: string;
-  carouselContainerStyle?: React.CSSProperties;
-  carouselImageClassName?: string;
-  carouselImageStyle?: React.CSSProperties;
-  carouselSlideStyle?: React.CSSProperties;
-  carouselSlideClassName?: string;
+  isSelected: boolean;
+  index: number;
+  image: Image;
+  onClick: (image: Image, index: number) => void;
 };
 
 type ThumbnailUIProps = Omit<

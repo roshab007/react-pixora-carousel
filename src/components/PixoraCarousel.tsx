@@ -4,11 +4,10 @@ import clsx from "clsx";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import React, { useCallback, useEffect, useState } from "react";
-import "../css/PixoraCarousel.css";
 import { PixoraCarouselProps } from "../types/types";
 import { getAxis, getFlexDirection } from "../utils/utils";
-import Carousel from "./Carousel";
-import Thumbnails from "./Thumbnails";
+import Carousel from "./carousel/Carousel";
+import Thumbnails from "./Thumbnail/Thumbnails";
 
 const PixoraCarousel: React.FC<PixoraCarouselProps> = ({
   images,

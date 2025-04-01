@@ -8,7 +8,7 @@
   "homepage": "https://github.com/roshab007",
   "type": "module",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rm -rf dist && rollup -c",
     "prepublishOnly": "yarn build"
   },
   "files": [
@@ -28,6 +28,7 @@
     "@rollup/plugin-typescript": "^12.1.2",
     "@types/react": "^19.0.12",
     "postcss": "^8.5.3",
+    "postcss-import": "^16.1.0",
     "react": "^19.0.0",
     "rollup": "^4.36.0",
     "rollup-plugin-dts": "^6.2.1",
