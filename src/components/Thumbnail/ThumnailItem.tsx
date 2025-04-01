@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import React, { useState } from "react";
 import { ThumbnailItemProps } from "../../types/types";
+import Placeholder from "../Placeholder";
 
 const ThumnailItem: React.FC<ThumbnailItemProps> = ({
   thumbnailButtonClassName,
@@ -15,6 +16,7 @@ const ThumnailItem: React.FC<ThumbnailItemProps> = ({
   onClick,
 }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   return (
     <button
@@ -32,19 +34,26 @@ const ThumnailItem: React.FC<ThumbnailItemProps> = ({
         ...(isSelected && thumbnailButtonSelectedStyle),
       }}
     >
-      {isLoading && <div className="thumbnail-skeleton" />}
-      <img
-        src={image.src}
-        alt={image?.alt || `Thumbnail ${index + 1}`}
-        style={{
-          ...thumbnailImageStyle,
-          display: isLoading ? "none" : "block",
-        }}
-        className={clsx("thumbnail-image", thumbnailImageClassName)}
-        onLoad={() => {
-          setIsLoading(false);
-        }}
-      />
+      {isLoading && !isError && <div className="thumbnail-skeleton" />}
+      {isError ? (
+        <Placeholder hideMessage />
+      ) : (
+        <img
+          src={image.src}
+          alt={image?.alt || `Thumbnail ${index + 1}`}
+          style={{
+            ...thumbnailImageStyle,
+            display: isLoading ? "none" : "block",
+          }}
+          className={clsx("thumbnail-image", thumbnailImageClassName)}
+          onLoad={() => {
+            setIsLoading(false);
+          }}
+          onError={() => {
+            setIsError(true);
+          }}
+        />
+      )}
     </button>
   );
 };

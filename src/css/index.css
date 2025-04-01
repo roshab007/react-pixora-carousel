@@ -1,6 +1,7 @@
 @import url("./carousel.css");
 @import url("./thumbnail.css");
 @import url("./skeleton.css");
+@import url("./placeholder.css");
 
 .container {
   max-width: min(800px, 100vw);

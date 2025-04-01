@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import React, { useState } from "react";
 import { CarouselSlideProps } from "../../types/types";
+import Placeholder from "../Placeholder";
 
 const CarouselSlide: React.FC<CarouselSlideProps> = ({
   carouselImageClassName,
@@ -11,25 +12,33 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
   index,
 }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   return (
     <div
       className={clsx("carousel-slide", carouselSlideClassName)}
       style={carouselSlideStyle}
     >
-      {isLoading && <div className="carousel-skeleton" />}
-      <img
-        src={image.src}
-        alt={image.alt || `Slide ${index + 1}`}
-        style={{
-          ...carouselImageStyle,
-          display: isLoading ? "none" : "block",
-        }}
-        className={clsx("carousel-image", carouselImageClassName)}
-        onLoad={() => {
-          setIsLoading(false);
-        }}
-      />
+      {isLoading && !isError && <div className="carousel-skeleton" />}
+      {isError ? (
+        <Placeholder />
+      ) : (
+        <img
+          src={image.src}
+          alt={image.alt || `Slide ${index + 1}`}
+          style={{
+            ...carouselImageStyle,
+            display: isLoading ? "none" : "block",
+          }}
+          className={clsx("carousel-image", carouselImageClassName)}
+          onLoad={() => {
+            setIsLoading(false);
+          }}
+          onError={() => {
+            setIsError(true);
+          }}
+        />
+      )}
     </div>
   );
 };
