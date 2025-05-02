@@ -128,29 +128,31 @@ For detailed information, check out the [Tailwind CSS documentation on using the
 
 ## Carousel Props
 
-| Prop                           | Type     | Default                           | Description                                   |
-| ------------------------------ | -------- | --------------------------------- | --------------------------------------------- |
-| **carouselContainerClassName** | `string` | [`carousel-container`](#carousel) | Custom class for the carousel container.      |
-| **carouselContainerStyle**     | `object` | `undefined`                       | Inline styles for the carousel container.     |
-| **carouselSlideClassName**     | `string` | [`carousel-slide`](#carousel)     | Custom class for individual carousel slides.  |
-| **carouselSlideStyle**         | `object` | `undefined`                       | Inline styles for individual carousel slides. |
-| **carouselImageClassName**     | `string` | [`carousel-image`](#carousel)     | Custom class for carousel images.             |
-| **carouselImageStyle**         | `object` | `undefined`                       | Inline styles for carousel images.            |
+| Prop                           | Type                             | Default                           | Description                                   |
+| ------------------------------ | -------------------------------- | --------------------------------- | --------------------------------------------- |
+| **carouselContainerClassName** | `string`                         | [`carousel-container`](#carousel) | Custom class for the carousel container.      |
+| **carouselContainerStyle**     | `object`                         | `undefined`                       | Inline styles for the carousel container.     |
+| **carouselSlideClassName**     | `string`                         | [`carousel-slide`](#carousel)     | Custom class for individual carousel slides.  |
+| **carouselSlideStyle**         | `object`                         | `undefined`                       | Inline styles for individual carousel slides. |
+| **carouselImageClassName**     | `string`                         | [`carousel-image`](#carousel)     | Custom class for carousel images.             |
+| **carouselImageStyle**         | `object`                         | `undefined`                       | Inline styles for carousel images.            |
+| **carouselOverlay**            | `ReactNode` \| `() => ReactNode` | `undefined`                       | Renders content over the carousel.            |
 
 ## Thumbnail Props
 
-| Prop                                 | Type     | Default                                   | Description                                               |
-| ------------------------------------ | -------- | ----------------------------------------- | --------------------------------------------------------- |
-| **thumbnailWrapperClassName**        | `string` | [`thumbnail-wrapper`](#thumbnail)         | Custom class for the thumbnail wrapper.                   |
-| **thumbnailWrapperStyle**            | `object` | `undefined`                               | Inline styles for the thumbnail wrapper.                  |
-| **thumbnailContainerClassName**      | `string` | [`thumbnail-container`](#thumbnail)       | Custom class for the thumbnail container.                 |
-| **thumbnailContainerStyle**          | `object` | `undefined`                               | Inline styles for the thumbnail container.                |
-| **thumbnailButtonClassName**         | `string` | [`thumbnail-button`](#thumbnail)          | Custom class for the thumbnail button.                    |
-| **thumbnailButtonStyle**             | `object` | `undefined`                               | Inline styles for the thumbnail button.                   |
-| **thumbnailButtonSelectedClassName** | `string` | [`thumbnail-button.selected`](#thumbnail) | Custom class for the selected thumbnail button.           |
-| **thumbnailButtonSelectedStyle**     | `object` | `undefined`                               | Inline styles for the selected selected thumbnail button. |
-| **thumbnailImageClassName**          | `string` | [`thumbnail-image`](#thumbnail)           | Custom class for the thumbnail image.                     |
-| **thumbnailImageStyle**              | `object` | `undefined`                               | Inline styles for the thumbnail image.                    |
+| Prop                                 | Type                             | Default                                   | Description                                               |
+| ------------------------------------ | -------------------------------- | ----------------------------------------- | --------------------------------------------------------- |
+| **thumbnailWrapperClassName**        | `string`                         | [`thumbnail-wrapper`](#thumbnail)         | Custom class for the thumbnail wrapper.                   |
+| **thumbnailWrapperStyle**            | `object`                         | `undefined`                               | Inline styles for the thumbnail wrapper.                  |
+| **thumbnailContainerClassName**      | `string`                         | [`thumbnail-container`](#thumbnail)       | Custom class for the thumbnail container.                 |
+| **thumbnailContainerStyle**          | `object`                         | `undefined`                               | Inline styles for the thumbnail container.                |
+| **thumbnailButtonClassName**         | `string`                         | [`thumbnail-button`](#thumbnail)          | Custom class for the thumbnail button.                    |
+| **thumbnailButtonStyle**             | `object`                         | `undefined`                               | Inline styles for the thumbnail button.                   |
+| **thumbnailButtonSelectedClassName** | `string`                         | [`thumbnail-button.selected`](#thumbnail) | Custom class for the selected thumbnail button.           |
+| **thumbnailButtonSelectedStyle**     | `object`                         | `undefined`                               | Inline styles for the selected selected thumbnail button. |
+| **thumbnailImageClassName**          | `string`                         | [`thumbnail-image`](#thumbnail)           | Custom class for the thumbnail image.                     |
+| **thumbnailImageStyle**              | `object`                         | `undefined`                               | Inline styles for the thumbnail image.                    |
+| **thumbnailOverlay**                 | `ReactNode` \| `() => ReactNode` | `undefined`                               | Renders content over the thumbnails.                      |
 
 ## Default Styles
 
