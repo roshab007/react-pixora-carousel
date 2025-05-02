@@ -14,6 +14,7 @@ const ThumnailItem: React.FC<ThumbnailItemProps> = ({
   isSelected,
   image,
   onClick,
+  thumbnailOverlay,
 }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -35,6 +36,13 @@ const ThumnailItem: React.FC<ThumbnailItemProps> = ({
       }}
     >
       {isLoading && !isError && <div className="thumbnail-skeleton" />}
+      {thumbnailOverlay && !isError && !isLoading && (
+        <div className="thumbnail-overlay">
+          {typeof thumbnailOverlay === "function"
+            ? thumbnailOverlay()
+            : thumbnailOverlay}
+        </div>
+      )}
       {isError ? (
         <Placeholder hideMessage />
       ) : (

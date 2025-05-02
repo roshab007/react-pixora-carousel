@@ -12,6 +12,7 @@ const Carousel: React.FC<CarouselProps> = ({
   carouselImageStyle,
   carouselSlideStyle,
   carouselSlideClassName,
+  carouselOverlay,
 }) => {
   return (
     <div
@@ -29,6 +30,7 @@ const Carousel: React.FC<CarouselProps> = ({
               carouselImageStyle={carouselImageStyle}
               carouselSlideClassName={carouselSlideClassName}
               carouselSlideStyle={carouselSlideStyle}
+              carouselOverlay={carouselOverlay}
             />
           ))}
         </div>

@@ -9,6 +9,10 @@
   }
 }
 
+.thumbnail-overlay {
+  position: absolute;
+}
+
 .thumbnail-container {
   display: flex;
   gap: 8px;

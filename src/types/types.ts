@@ -17,6 +17,7 @@ export type CarouselSlideProps = {
   carouselImageStyle?: React.CSSProperties;
   carouselSlideStyle?: React.CSSProperties;
   carouselSlideClassName?: string;
+  carouselOverlay?: React.ReactNode | (() => React.ReactNode);
   image: Image;
   index: number;
 };
@@ -34,6 +35,7 @@ export type ThumbnailsProps = {
   thumbnailWrapperStyle?: React.CSSProperties;
   thumbnailContainerClassName?: string;
   thumbnailContainerStyle?: React.CSSProperties;
+  thumbnailOverlay?: React.ReactNode | (() => React.ReactNode);
 } & Omit<ThumbnailItemProps, "isSelected" | "index" | "image" | "onClick">;
 
 export type ThumbnailItemProps = {
@@ -43,6 +45,7 @@ export type ThumbnailItemProps = {
   thumbnailButtonSelectedClassName?: string;
   thumbnailImageClassName?: string;
   thumbnailImageStyle?: React.CSSProperties;
+  thumbnailOverlay?: React.ReactNode | (() => React.ReactNode);
   isSelected: boolean;
   index: number;
   image: Image;

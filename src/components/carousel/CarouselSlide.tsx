@@ -10,6 +10,7 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
   carouselSlideStyle,
   image,
   index,
+  carouselOverlay,
 }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -20,6 +21,13 @@ const CarouselSlide: React.FC<CarouselSlideProps> = ({
       style={carouselSlideStyle}
     >
       {isLoading && !isError && <div className="carousel-skeleton" />}
+      {carouselOverlay && !isError && !isLoading && (
+        <div className="carousel-overlay">
+          {typeof carouselOverlay === "function"
+            ? carouselOverlay()
+            : carouselOverlay}
+        </div>
+      )}
       {isError ? (
         <Placeholder />
       ) : (

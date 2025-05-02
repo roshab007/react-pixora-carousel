@@ -21,6 +21,7 @@ const Thumbnails: React.FC<ThumbnailsProps> = ({
   thumbnailButtonStyle,
   thumbnailImageClassName,
   thumbnailImageStyle,
+  thumbnailOverlay,
 }) => {
   return (
     <div
@@ -52,6 +53,7 @@ const Thumbnails: React.FC<ThumbnailsProps> = ({
             thumbnailButtonSelectedStyle={thumbnailButtonSelectedStyle}
             thumbnailImageClassName={thumbnailImageClassName}
             thumbnailImageStyle={thumbnailImageStyle}
+            thumbnailOverlay={thumbnailOverlay}
           />
         ))}
       </div>

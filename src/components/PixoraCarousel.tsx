@@ -21,6 +21,7 @@ const PixoraCarousel: React.FC<PixoraCarouselProps> = ({
   carouselContainerStyle,
   thumbnailContainerClassName,
   thumbnailContainerStyle,
+  carouselOverlay,
   carouselImageClassName,
   carouselImageStyle,
   thumbnailImageClassName,
@@ -30,6 +31,7 @@ const PixoraCarousel: React.FC<PixoraCarouselProps> = ({
   thumbnailButtonSelectedStyle,
   thumbnailButtonClassName,
   thumbnailButtonSelectedClassName,
+  thumbnailOverlay,
   onSelectThumb,
   carouselSlideClassName,
   carouselSlideStyle,
@@ -107,6 +109,7 @@ const PixoraCarousel: React.FC<PixoraCarouselProps> = ({
           viewportRef={thumbViewportRef}
           thumbnailPosition={thumbnailPosition}
           hideThumbnailsOnMobile={hideThumbnailsOnMobile}
+          thumbnailOverlay={thumbnailOverlay}
         />
       )}
 
@@ -119,6 +122,7 @@ const PixoraCarousel: React.FC<PixoraCarouselProps> = ({
         carouselImageClassName={carouselImageClassName}
         carouselImageStyle={carouselImageStyle}
         viewportRef={mainViewportRef}
+        carouselOverlay={carouselOverlay}
       />
 
       {!hideThumbnails && ["right", "bottom"].includes(thumbnailPosition) && (
@@ -142,6 +146,7 @@ const PixoraCarousel: React.FC<PixoraCarouselProps> = ({
           viewportRef={thumbViewportRef}
           thumbnailPosition={thumbnailPosition}
           hideThumbnailsOnMobile={hideThumbnailsOnMobile}
+          thumbnailOverlay={thumbnailOverlay}
         />
       )}
     </div>
