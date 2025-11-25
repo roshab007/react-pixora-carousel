@@ -1,7 +1,7 @@
 {
   "name": "react-pixora-carousel",
   "description": "A customizable React carousel component with autoplay, looping, and thumbnail navigation for responsive image carousels.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -51,6 +51,7 @@
     "Dynamic Image Slider",
     "Mobile-Friendly Carousel",
     "Lightweight Carousel",
-    "Interactive Slideshow"
+    "Interactive Slideshow",
+    "react"
   ]
 }
